@@ -115,6 +115,10 @@ func (f *Frame) SamplingFrequency() (int, error) {
 	return f.header.SamplingFrequencyValue()
 }
 
+func (f *Frame) NumberOfChannels() int {
+	return f.header.NumberOfChannels()
+}
+
 func (f *Frame) Decode() []byte {
 	out := make([]byte, f.header.BytesPerFrame())
 	nch := f.header.NumberOfChannels()
